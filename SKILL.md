@@ -165,35 +165,4 @@ python {SKILL_PATH}\line_desktop send_message --chat_name "專案討論" --messa
 python {SKILL_PATH}\line_desktop select_chat --chat_name "專案討論"
 ```
 
----
-
-## 原始 MCP 版本 → 本 Skill 對照表
-
-| 原始 MCP tool | 本 Skill 工具 | 說明 |
-|--------------|--------------|------|
-| `get_line_chatroom_history_default` | `get_chat_history --mode default` | 一般讀取 |
-| `get_line_chatroom_history_long` | `get_chat_history --mode long` | 完整讀取 |
-| `get_line_chatroom_history_short` | `get_chat_history --mode short` | 快速讀取 |
-| `send_message_manual` | `send_message` | 手動確認 |
-| `send_message_auto` | `send_message`（預設） | 自動送出 |
-| _(無)_ | `is_line_running` | ✨ 新增 |
-| _(無)_ | `activate_line` | ✨ 新增 |
-| _(無)_ | `select_chat` | ✨ 新增 |
-
----
-
-## 專案結構
-
-```
-d:\line-desktop-skill\
-├── SKILL.md                    ← 本檔（Skill 說明文件）
-├── requirements.txt            ← Python 依賴
-└── line_desktop/
-    ├── __init__.py
-    ├── __main__.py             ← python {SKILL_PATH}\line_desktop 入口
-    ├── cli.py                  ← CLI 命令列介面
-    ├── automation.py           ← GUI 自動化核心（pyautogui + pygetwindow）
-    └── tools.py                ← Tool 函式集（Agent 呼叫入口）
-```
-
 
